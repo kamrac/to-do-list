@@ -1,0 +1,54 @@
+body {
+    background-color: #90708C;
+}
+
+h2 {
+    text-align: center;
+    color: #E1CDB5;
+}
+.to-do {
+    border: 1px solid black;
+    width: 50%;
+    margin: 0 auto
+}
+
+input#info {
+
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 0px;
+    padding: 9px 12px;
+    color: #333333;
+    vertical-align: middle;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    margin: 0;
+    line-height: 1.42857143;
+}
+
+.form {
+    display: block;
+    margin: 0 0 15px;
+}
+
+#postForm{
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+button {
+    height: 40px;
+    display: inline-block;
+    padding: 9px 15px;
+    background-color: grey;
+    color: white;
+    border: 0;
+    line-height: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
