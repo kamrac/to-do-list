@@ -8,14 +8,19 @@
 
 // declare variables from HTML
 const toDoInput = document.getElementById("info");
-const button = document.getElementById("btn");
 const postsForm = document.getElementById("postsForm");
 const displayItem = document.querySelector(".displayItems");
 
+
+// array list for to do list items
+const items = [];
+
+
 // add new items to array 
 const addItem = (toDo) => {
-    items.push ({toDo})
-    return toDo;
+    const newItem = { toDo };
+    items.push ({newItem});
+    return newItem;
     
 };
 
@@ -29,43 +34,24 @@ const createToDoListElement = ({toDo}) => {
     //add in items
     toDoItem.innerText = toDo;
     console.log(toDo);
+
     // add to the DOM
     displayDiv.append(toDoItem);
     displayItem.appendChild(displayDiv);
 };
 
-// array list for to do list items
-   const items = [];
-
-
-//display item from local storage 
-// const items = JSON.parse(localStorage.getItem("items")) || [];
-
-
-
 
 // call the array
 items.forEach(createToDoListElement);
 
-postsForm.onsubmit = e => {
+postsForm.onsubmit = (e) => {
     e.preventDefault();
 
     const newItem = addItem(toDoInput.value);
-    console.log(newItem);
+
+// Call createToDoListElement here once when adding the item
+
     createToDoListElement(newItem);
-    console.log(createToDoListElement(newItem));
 
     toDoInput.value = "";
 };
-// // add items to local storage 
-// localStorage.setItem("items", JSON.stringify(items));
-// postsForm.onsubmit = (e) => {
-//     e.preventDefault();
-//     //save data to local storage using setItem. Pass the correct data
-//     localStorage.setItem("toDoList", JSON.stringify());
-//         const newItem = addItem(
-//         toDoInput.value
-//    );
-//     // Clear Form 
-//     toDoInput.value = "";
-// };
